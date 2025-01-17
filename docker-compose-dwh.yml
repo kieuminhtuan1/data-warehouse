@@ -1,0 +1,22 @@
+version: '3.7'
+
+services:
+
+  # postgreSQL service (share data between services)
+
+  postgres_dwh:
+    image: postgres:10-alpine
+    container_name: postgres_dwh
+    volumes:
+      - "dwh:/var/lib/postgresql/data"
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: ${DWH_POSTGRES_ADMIN}
+      POSTGRES_PASSWORD: ${DWH_POSTGRES_PASSWORD}
+      POSTGRES_DB: ${DWH_POSTGRES_DB}
+
+volumes:
+  dwh:
+    name: ${DWH_DOCKER_MOUNT}
+    external: false

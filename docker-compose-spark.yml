@@ -1,0 +1,72 @@
+services:
+  spark-master:
+    container_name: spark-master
+    build: ./spark
+    image: bitnami/spark:latest
+    entrypoint: [ './entrypoint.sh', 'master' ]
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8082" ]
+      interval: 5s
+      timeout: 3s
+      retries: 3
+    volumes:
+      - ./spark/ETL:/opt/spark/ETL
+      - ./spark/ETL/raw:/opt/spark/ETL/raw
+      - ./spark/ETL/foundation:/opt/spark/ETL/foundation
+      - ./spark/ETL/trusted:/opt/spark/ETL/trusted
+      - ./spark/ETL/unified:/opt/spark/ETL/unified
+      - ./data:/opt/spark/data
+      - spark-logs:/opt/spark/spark-events
+    env_file:
+      - ./spark/.env.spark
+    ports:
+      - '8082:8080'
+      - '7077:7077'
+    networks:
+      - all-network
+
+  spark-history-server:
+    container_name: spark-history
+    image: bitnami/spark:latest
+    entrypoint: [ './entrypoint.sh', 'history' ]
+    depends_on:
+      - spark-master
+    env_file:
+      - ./spark/.env.spark
+    volumes:
+      - ./spark/ETL:/opt/spark/ETL
+      - ./spark/ETL/raw:/opt/spark/ETL/raw
+      - ./spark/ETL/foundation:/opt/spark/ETL/foundation
+      - ./spark/ETL/trusted:/opt/spark/ETL/trusted
+      - ./spark/ETL/unified:/opt/spark/ETL/unified
+      - ./data:/opt/spark/data
+      - spark-logs:/opt/spark/spark-events
+    ports:
+      - '18080:18080'
+    networks:
+      - all-network
+
+  spark-worker:
+    container_name: spark-worker
+    image: bitnami/spark:latest
+    entrypoint: [ './entrypoint.sh', 'worker' ]
+    depends_on:
+      - spark-master
+    env_file:
+      - ./spark/.env.spark
+    volumes:
+      - ./spark/ETL:/opt/spark/ETL
+      - ./spark/ETL/raw:/opt/spark/ETL/raw
+      - ./spark/ETL/foundation:/opt/spark/ETL/foundation
+      - ./spark/ETL/trusted:/opt/spark/ETL/trusted
+      - ./spark/ETL/unified:/opt/spark/ETL/unified
+      - ./data:/opt/spark/data
+      - spark-logs:/opt/spark/spark-events
+    networks:
+      - all-network
+
+volumes:
+  spark-logs:
+networks:
+  all-network:
+    driver: bridge

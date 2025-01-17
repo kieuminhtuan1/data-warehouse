@@ -1,0 +1,22 @@
+[2025-01-08T14:21:15.616+0000] {processor.py:186} INFO - Started process (PID=142) to work on /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/tutorial_taskflow_api.py
+[2025-01-08T14:21:15.619+0000] {processor.py:914} INFO - Processing file /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/tutorial_taskflow_api.py for tasks to queue
+[2025-01-08T14:21:15.625+0000] {logging_mixin.py:190} INFO - [2025-01-08T14:21:15.625+0000] {dagbag.py:588} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/tutorial_taskflow_api.py
+[2025-01-08T14:21:15.791+0000] {processor.py:925} INFO - DAG(s) 'tutorial_taskflow_api' retrieved from /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/tutorial_taskflow_api.py
+[2025-01-08T14:21:18.267+0000] {logging_mixin.py:190} INFO - [2025-01-08T14:21:18.267+0000] {override.py:1911} INFO - Created Permission View: can read on DAG:tutorial_taskflow_api
+[2025-01-08T14:21:23.177+0000] {logging_mixin.py:190} INFO - [2025-01-08T14:21:23.177+0000] {override.py:1911} INFO - Created Permission View: can edit on DAG:tutorial_taskflow_api
+[2025-01-08T14:21:24.011+0000] {logging_mixin.py:190} INFO - [2025-01-08T14:21:24.011+0000] {override.py:1911} INFO - Created Permission View: can delete on DAG:tutorial_taskflow_api
+[2025-01-08T14:21:26.715+0000] {logging_mixin.py:190} INFO - [2025-01-08T14:21:26.714+0000] {override.py:1911} INFO - Created Permission View: can create on DAG Run:tutorial_taskflow_api
+[2025-01-08T14:21:27.388+0000] {logging_mixin.py:190} INFO - [2025-01-08T14:21:27.387+0000] {override.py:1911} INFO - Created Permission View: can read on DAG Run:tutorial_taskflow_api
+[2025-01-08T14:21:28.628+0000] {logging_mixin.py:190} INFO - [2025-01-08T14:21:28.627+0000] {override.py:1911} INFO - Created Permission View: can delete on DAG Run:tutorial_taskflow_api
+[2025-01-08T14:21:29.080+0000] {logging_mixin.py:190} INFO - [2025-01-08T14:21:29.080+0000] {override.py:1911} INFO - Created Permission View: menu access on DAG Run:tutorial_taskflow_api
+[2025-01-08T14:21:29.083+0000] {logging_mixin.py:190} INFO - [2025-01-08T14:21:29.082+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-08T14:21:29.202+0000] {logging_mixin.py:190} INFO - [2025-01-08T14:21:29.202+0000] {dag.py:3262} INFO - Creating ORM DAG for tutorial_taskflow_api
+[2025-01-08T14:21:29.204+0000] {logging_mixin.py:190} INFO - [2025-01-08T14:21:29.204+0000] {dag.py:4180} INFO - Setting next_dagrun for tutorial_taskflow_api to None, run_after=None
+[2025-01-08T14:21:29.960+0000] {processor.py:208} INFO - Processing /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/tutorial_taskflow_api.py took 14.354 seconds
+[2025-01-08T14:22:01.784+0000] {processor.py:186} INFO - Started process (PID=211) to work on /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/tutorial_taskflow_api.py
+[2025-01-08T14:22:01.837+0000] {processor.py:914} INFO - Processing file /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/tutorial_taskflow_api.py for tasks to queue
+[2025-01-08T14:22:01.840+0000] {logging_mixin.py:190} INFO - [2025-01-08T14:22:01.840+0000] {dagbag.py:588} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/tutorial_taskflow_api.py
+[2025-01-08T14:22:01.878+0000] {processor.py:925} INFO - DAG(s) 'tutorial_taskflow_api' retrieved from /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/tutorial_taskflow_api.py
+[2025-01-08T14:22:01.955+0000] {logging_mixin.py:190} INFO - [2025-01-08T14:22:01.954+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-08T14:22:01.980+0000] {logging_mixin.py:190} INFO - [2025-01-08T14:22:01.980+0000] {dag.py:4180} INFO - Setting next_dagrun for tutorial_taskflow_api to None, run_after=None
+[2025-01-08T14:22:02.048+0000] {processor.py:208} INFO - Processing /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/tutorial_taskflow_api.py took 0.276 seconds

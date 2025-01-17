@@ -1,0 +1,120 @@
+[2025-01-09T02:39:22.316+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-01-09T02:39:22.364+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: topcv_crawler_dag.crawl_jobs_task manual__2025-01-09T02:39:18.920926+00:00 [queued]>
+[2025-01-09T02:39:22.378+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: topcv_crawler_dag.crawl_jobs_task manual__2025-01-09T02:39:18.920926+00:00 [queued]>
+[2025-01-09T02:39:22.379+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 2
+[2025-01-09T02:39:22.425+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): crawl_jobs_task> on 2025-01-09 02:39:18.920926+00:00
+[2025-01-09T02:39:22.431+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=74) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-01-09T02:39:22.438+0000] {standard_task_runner.py:72} INFO - Started process 76 to run task
+[2025-01-09T02:39:22.441+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'topcv_crawler_dag', 'crawl_jobs_task', 'manual__2025-01-09T02:39:18.920926+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/crawl_data.py', '--cfg-path', '/tmp/tmpg9qev35_']
+[2025-01-09T02:39:22.447+0000] {standard_task_runner.py:105} INFO - Job 4: Subtask crawl_jobs_task
+[2025-01-09T02:39:22.585+0000] {task_command.py:467} INFO - Running <TaskInstance: topcv_crawler_dag.crawl_jobs_task manual__2025-01-09T02:39:18.920926+00:00 [running]> on host 600f48ffa704
+[2025-01-09T02:39:22.748+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='topcv_crawler_dag' AIRFLOW_CTX_TASK_ID='crawl_jobs_task' AIRFLOW_CTX_EXECUTION_DATE='2025-01-09T02:39:18.920926+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-01-09T02:39:18.920926+00:00'
+[2025-01-09T02:39:22.751+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-01-09T02:39:23.812+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 1: 403 Client Error: Forbidden for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=1
+[2025-01-09T02:39:24.499+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 2: 403 Client Error: Forbidden for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=2
+[2025-01-09T02:39:25.995+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 3: 403 Client Error: Forbidden for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=3
+[2025-01-09T02:39:28.758+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 4: 403 Client Error: Forbidden for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=4
+[2025-01-09T02:39:29.494+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 5: 403 Client Error: Forbidden for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=5
+[2025-01-09T02:39:30.667+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 6: 403 Client Error: Forbidden for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=6
+[2025-01-09T02:39:32.493+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 7: 403 Client Error: Forbidden for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=7
+[2025-01-09T02:39:34.082+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 8: 403 Client Error: Forbidden for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=8
+[2025-01-09T02:39:34.332+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 9: 403 Client Error: Forbidden for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=9
+[2025-01-09T02:39:34.774+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 10: 403 Client Error: Forbidden for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=10
+[2025-01-09T02:39:35.018+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 11: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=11
+[2025-01-09T02:39:35.382+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 12: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=12
+[2025-01-09T02:39:35.700+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 13: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=13
+[2025-01-09T02:39:35.923+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 14: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=14
+[2025-01-09T02:39:36.215+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 15: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=15
+[2025-01-09T02:39:36.617+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 16: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=16
+[2025-01-09T02:39:37.153+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 17: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=17
+[2025-01-09T02:39:37.538+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 18: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=18
+[2025-01-09T02:39:37.813+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 19: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=19
+[2025-01-09T02:39:38.206+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 20: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=20
+[2025-01-09T02:39:38.993+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 21: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=21
+[2025-01-09T02:39:39.303+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 22: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=22
+[2025-01-09T02:39:39.537+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 23: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=23
+[2025-01-09T02:39:39.742+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 24: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=24
+[2025-01-09T02:39:39.964+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 25: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=25
+[2025-01-09T02:39:40.154+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 26: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=26
+[2025-01-09T02:39:40.679+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 27: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=27
+[2025-01-09T02:39:41.040+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 28: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=28
+[2025-01-09T02:39:41.527+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 29: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=29
+[2025-01-09T02:39:41.753+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 30: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=30
+[2025-01-09T02:39:42.311+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 31: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=31
+[2025-01-09T02:39:42.598+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 32: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=32
+[2025-01-09T02:39:42.986+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 33: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=33
+[2025-01-09T02:39:43.396+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 34: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=34
+[2025-01-09T02:39:43.936+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 35: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=35
+[2025-01-09T02:39:44.178+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 36: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=36
+[2025-01-09T02:39:44.657+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 37: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=37
+[2025-01-09T02:39:45.161+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 38: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=38
+[2025-01-09T02:39:45.607+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 39: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=39
+[2025-01-09T02:39:46.448+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 40: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=40
+[2025-01-09T02:39:47.157+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 41: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=41
+[2025-01-09T02:39:47.511+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 42: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=42
+[2025-01-09T02:39:48.035+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 43: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=43
+[2025-01-09T02:39:48.338+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 44: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=44
+[2025-01-09T02:39:48.633+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 45: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=45
+[2025-01-09T02:39:48.891+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 46: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=46
+[2025-01-09T02:39:49.120+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 47: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=47
+[2025-01-09T02:39:49.382+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 48: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=48
+[2025-01-09T02:39:49.631+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 49: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=49
+[2025-01-09T02:39:49.835+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 50: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=50
+[2025-01-09T02:39:50.002+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 51: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=51
+[2025-01-09T02:39:50.272+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 52: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=52
+[2025-01-09T02:39:50.463+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 53: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=53
+[2025-01-09T02:39:50.655+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 54: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=54
+[2025-01-09T02:39:50.881+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 55: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=55
+[2025-01-09T02:39:51.201+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 56: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=56
+[2025-01-09T02:39:51.631+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 57: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=57
+[2025-01-09T02:39:51.975+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 58: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=58
+[2025-01-09T02:39:52.327+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 59: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=59
+[2025-01-09T02:39:52.667+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 60: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=60
+[2025-01-09T02:39:53.149+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 61: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=61
+[2025-01-09T02:39:53.410+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 62: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=62
+[2025-01-09T02:39:53.751+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 63: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=63
+[2025-01-09T02:39:54.170+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 64: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=64
+[2025-01-09T02:39:54.555+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 65: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=65
+[2025-01-09T02:39:54.943+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 66: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=66
+[2025-01-09T02:39:55.342+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 67: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=67
+[2025-01-09T02:39:55.662+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 68: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=68
+[2025-01-09T02:39:56.247+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 69: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=69
+[2025-01-09T02:39:56.719+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 70: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=70
+[2025-01-09T02:39:56.932+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 71: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=71
+[2025-01-09T02:39:57.455+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 72: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=72
+[2025-01-09T02:39:57.826+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 73: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=73
+[2025-01-09T02:39:58.390+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 74: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=74
+[2025-01-09T02:39:58.599+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 75: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=75
+[2025-01-09T02:39:58.790+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 76: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=76
+[2025-01-09T02:39:59.043+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 77: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=77
+[2025-01-09T02:39:59.420+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 78: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=78
+[2025-01-09T02:40:00.331+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 79: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=79
+[2025-01-09T02:40:00.569+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 80: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=80
+[2025-01-09T02:40:01.052+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 81: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=81
+[2025-01-09T02:40:01.446+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 82: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=82
+[2025-01-09T02:40:01.710+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 83: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=83
+[2025-01-09T02:40:02.037+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 84: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=84
+[2025-01-09T02:40:02.353+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 85: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=85
+[2025-01-09T02:40:02.669+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 86: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=86
+[2025-01-09T02:40:02.977+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 87: 403 Client Error: Forbidden for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=87
+[2025-01-09T02:40:03.293+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 88: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=88
+[2025-01-09T02:40:03.683+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 89: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=89
+[2025-01-09T02:40:04.003+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 90: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=90
+[2025-01-09T02:40:04.606+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 91: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=91
+[2025-01-09T02:40:05.126+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 92: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=92
+[2025-01-09T02:40:06.653+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 93: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=93
+[2025-01-09T02:40:08.738+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 94: 403 Client Error: Forbidden for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=94
+[2025-01-09T02:40:14.014+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 95: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=95
+[2025-01-09T02:40:15.574+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 96: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=96
+[2025-01-09T02:40:16.171+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 97: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=97
+[2025-01-09T02:40:16.614+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 98: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=98
+[2025-01-09T02:40:19.394+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 99: 429 Client Error: Too Many Requests for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=99
+[2025-01-09T02:40:21.487+0000] {logging_mixin.py:190} INFO - Lỗi khi fetch trang 100: 403 Client Error: Forbidden for url: https://www.topcv.vn/tim-viec-lam-moi-nhat?sort=new&page=100
+[2025-01-09T02:40:21.503+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-01-09T02:40:21.513+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-01-09T02:40:21.514+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=topcv_crawler_dag, task_id=crawl_jobs_task, run_id=manual__2025-01-09T02:39:18.920926+00:00, execution_date=20250109T023918, start_date=20250109T023922, end_date=20250109T024021
+[2025-01-09T02:40:21.561+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-01-09T02:40:21.582+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-01-09T02:40:21.585+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

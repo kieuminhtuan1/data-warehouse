@@ -1,0 +1,8 @@
+__pycache__
+./airflow/logs
+./airflow/plugins
+./data/*
+.env
+./spark/.env.spark
+./superset/.env-non-dev
+./superset/pythonpath_dev

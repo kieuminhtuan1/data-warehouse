@@ -1,0 +1,22 @@
+[2025-01-10T18:50:40.929+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-01-10T18:50:40.970+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: topcv_scraper.extract_job_data scheduled__2025-01-09T00:00:00+00:00 [queued]>
+[2025-01-10T18:50:41.001+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: topcv_scraper.extract_job_data scheduled__2025-01-09T00:00:00+00:00 [queued]>
+[2025-01-10T18:50:41.007+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 2
+[2025-01-10T18:50:41.050+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): extract_job_data> on 2025-01-09 00:00:00+00:00
+[2025-01-10T18:50:41.072+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=139) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-01-10T18:50:41.075+0000] {standard_task_runner.py:72} INFO - Started process 140 to run task
+[2025-01-10T18:50:41.075+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'topcv_scraper', 'extract_job_data', 'scheduled__2025-01-09T00:00:00+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/crawl_data.py', '--cfg-path', '/tmp/tmp6zh7sdvq']
+[2025-01-10T18:50:41.084+0000] {standard_task_runner.py:105} INFO - Job 7: Subtask extract_job_data
+[2025-01-10T18:50:41.242+0000] {task_command.py:467} INFO - Running <TaskInstance: topcv_scraper.extract_job_data scheduled__2025-01-09T00:00:00+00:00 [running]> on host 1d1dc2f58764
+[2025-01-10T18:50:41.436+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='topcv_scraper' AIRFLOW_CTX_TASK_ID='extract_job_data' AIRFLOW_CTX_EXECUTION_DATE='2025-01-09T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-01-09T00:00:00+00:00'
+[2025-01-10T18:50:41.439+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-01-10T18:50:41.473+0000] {logging_mixin.py:190} INFO - An error occurred while extracting job data: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+[2025-01-10T18:50:41.474+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-01-10T18:50:41.492+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-01-10T18:50:41.493+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=topcv_scraper, task_id=extract_job_data, run_id=scheduled__2025-01-09T00:00:00+00:00, execution_date=20250109T000000, start_date=20250110T185040, end_date=20250110T185041
+[2025-01-10T18:50:41.555+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-01-10T18:50:41.586+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-01-10T18:50:41.591+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

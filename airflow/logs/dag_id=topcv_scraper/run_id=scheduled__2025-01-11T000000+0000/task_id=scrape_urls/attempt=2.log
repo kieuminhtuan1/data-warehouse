@@ -1,0 +1,25 @@
+[2025-01-13T02:16:01.609+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-01-13T02:16:04.828+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: topcv_scraper.scrape_urls scheduled__2025-01-11T00:00:00+00:00 [queued]>
+[2025-01-13T02:16:08.701+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: topcv_scraper.scrape_urls scheduled__2025-01-11T00:00:00+00:00 [queued]>
+[2025-01-13T02:16:08.986+0000] {taskinstance.py:2866} INFO - Starting attempt 2 of 2
+[2025-01-13T02:16:09.985+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): scrape_urls> on 2025-01-11 00:00:00+00:00
+[2025-01-13T02:16:10.556+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=129) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-01-13T02:16:10.801+0000] {standard_task_runner.py:72} INFO - Started process 145 to run task
+[2025-01-13T02:16:11.852+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'topcv_scraper', 'scrape_urls', 'scheduled__2025-01-11T00:00:00+00:00', '--job-id', '16', '--raw', '--subdir', 'DAGS_FOLDER/crawl_data.py', '--cfg-path', '/tmp/tmp92s6bhwo']
+[2025-01-13T02:16:13.313+0000] {standard_task_runner.py:105} INFO - Job 16: Subtask scrape_urls
+[2025-01-13T02:16:24.679+0000] {job.py:229} INFO - Heartbeat recovered after 29.64 seconds
+[2025-01-13T02:16:26.140+0000] {task_command.py:467} INFO - Running <TaskInstance: topcv_scraper.scrape_urls scheduled__2025-01-11T00:00:00+00:00 [running]> on host 91a339479d94
+[2025-01-13T02:27:14.575+0000] {job.py:229} INFO - Heartbeat recovered after 642.42 seconds
+[2025-01-13T02:27:21.278+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='topcv_scraper' AIRFLOW_CTX_TASK_ID='scrape_urls' AIRFLOW_CTX_EXECUTION_DATE='2025-01-11T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-01-11T00:00:00+00:00'
+[2025-01-13T02:27:21.433+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-01-13T02:27:35.210+0000] {job.py:229} INFO - Heartbeat recovered after 13.27 seconds
+[2025-01-13T02:27:43.208+0000] {job.py:229} INFO - Heartbeat recovered after 10.94 seconds
+[2025-01-13T02:27:43.589+0000] {local_task_job_runner.py:346} WARNING - State of this instance has been externally set to failed. Terminating instance.
+[2025-01-13T02:27:43.608+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-01-13T02:27:43.896+0000] {process_utils.py:132} INFO - Sending 15 to group 145. PIDs of all processes in the group: [145]
+[2025-01-13T02:27:43.914+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 145
+[2025-01-13T02:27:44.059+0000] {taskinstance.py:3093} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-01-13T02:27:44.536+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-01-13T02:27:46.698+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=145, status='terminated', exitcode=0, started='02:16:09') (145) terminated with exit code 0

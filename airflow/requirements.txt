@@ -1,0 +1,4 @@
+cloudscraper
+BeautifulSoup4
+python-dotenv
+pymysql

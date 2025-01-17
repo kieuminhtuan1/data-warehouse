@@ -1,0 +1,29 @@
+[2025-01-08T14:19:07.842+0000] {processor.py:186} INFO - Started process (PID=73) to work on /opt/airflow/dags/crawl_data.py
+[2025-01-08T14:19:07.852+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/crawl_data.py for tasks to queue
+[2025-01-08T14:19:07.855+0000] {logging_mixin.py:190} INFO - [2025-01-08T14:19:07.854+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/crawl_data.py
+[2025-01-08T14:19:09.021+0000] {processor.py:925} INFO - DAG(s) 'topcv_crawler_dag' retrieved from /opt/airflow/dags/crawl_data.py
+[2025-01-08T14:19:09.784+0000] {logging_mixin.py:190} INFO - [2025-01-08T14:19:09.784+0000] {override.py:1911} INFO - Created Permission View: can read on DAG:topcv_crawler_dag
+[2025-01-08T14:19:09.831+0000] {logging_mixin.py:190} INFO - [2025-01-08T14:19:09.830+0000] {override.py:1911} INFO - Created Permission View: can edit on DAG:topcv_crawler_dag
+[2025-01-08T14:19:09.897+0000] {logging_mixin.py:190} INFO - [2025-01-08T14:19:09.897+0000] {override.py:1911} INFO - Created Permission View: can delete on DAG:topcv_crawler_dag
+[2025-01-08T14:19:09.961+0000] {logging_mixin.py:190} INFO - [2025-01-08T14:19:09.961+0000] {override.py:1911} INFO - Created Permission View: can create on DAG Run:topcv_crawler_dag
+[2025-01-08T14:19:10.075+0000] {logging_mixin.py:190} INFO - [2025-01-08T14:19:10.074+0000] {override.py:1911} INFO - Created Permission View: can read on DAG Run:topcv_crawler_dag
+[2025-01-08T14:19:10.111+0000] {logging_mixin.py:190} INFO - [2025-01-08T14:19:10.110+0000] {override.py:1911} INFO - Created Permission View: can delete on DAG Run:topcv_crawler_dag
+[2025-01-08T14:19:10.146+0000] {logging_mixin.py:190} INFO - [2025-01-08T14:19:10.146+0000] {override.py:1911} INFO - Created Permission View: menu access on DAG Run:topcv_crawler_dag
+[2025-01-08T14:19:10.147+0000] {logging_mixin.py:190} INFO - [2025-01-08T14:19:10.147+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-08T14:19:10.234+0000] {logging_mixin.py:190} INFO - [2025-01-08T14:19:10.234+0000] {dag.py:3262} INFO - Creating ORM DAG for topcv_crawler_dag
+[2025-01-08T14:19:10.551+0000] {logging_mixin.py:190} INFO - [2025-01-08T14:19:10.551+0000] {dag.py:4180} INFO - Setting next_dagrun for topcv_crawler_dag to 2025-01-07 00:00:00+00:00, run_after=2025-01-08 00:00:00+00:00
+[2025-01-08T14:19:10.999+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/crawl_data.py took 3.173 seconds
+[2025-01-08T14:21:39.983+0000] {processor.py:186} INFO - Started process (PID=159) to work on /opt/airflow/dags/crawl_data.py
+[2025-01-08T14:21:39.995+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/crawl_data.py for tasks to queue
+[2025-01-08T14:21:40.020+0000] {logging_mixin.py:190} INFO - [2025-01-08T14:21:40.019+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/crawl_data.py
+[2025-01-08T14:21:40.702+0000] {processor.py:925} INFO - DAG(s) 'topcv_crawler_dag' retrieved from /opt/airflow/dags/crawl_data.py
+[2025-01-08T14:21:40.851+0000] {logging_mixin.py:190} INFO - [2025-01-08T14:21:40.851+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-08T14:21:41.018+0000] {logging_mixin.py:190} INFO - [2025-01-08T14:21:41.017+0000] {dag.py:4180} INFO - Setting next_dagrun for topcv_crawler_dag to 2025-01-07 00:00:00+00:00, run_after=2025-01-08 00:00:00+00:00
+[2025-01-08T14:21:41.310+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/crawl_data.py took 1.419 seconds
+[2025-01-08T14:22:12.123+0000] {processor.py:186} INFO - Started process (PID=222) to work on /opt/airflow/dags/crawl_data.py
+[2025-01-08T14:22:12.141+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/crawl_data.py for tasks to queue
+[2025-01-08T14:22:12.143+0000] {logging_mixin.py:190} INFO - [2025-01-08T14:22:12.143+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/crawl_data.py
+[2025-01-08T14:22:12.313+0000] {processor.py:925} INFO - DAG(s) 'topcv_crawler_dag' retrieved from /opt/airflow/dags/crawl_data.py
+[2025-01-08T14:22:12.365+0000] {logging_mixin.py:190} INFO - [2025-01-08T14:22:12.364+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-08T14:22:12.398+0000] {logging_mixin.py:190} INFO - [2025-01-08T14:22:12.398+0000] {dag.py:4180} INFO - Setting next_dagrun for topcv_crawler_dag to 2025-01-07 00:00:00+00:00, run_after=2025-01-08 00:00:00+00:00
+[2025-01-08T14:22:12.480+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/crawl_data.py took 0.364 seconds
