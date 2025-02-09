@@ -18,8 +18,9 @@ x-superset-image: &superset-image apache/superset:3.0.0rc3
 x-superset-depends-on: &superset-depends-on
   - superset-db
   - superset-redis
-x-superset-volumes: &superset-volumes
+x-superset-volumes:
   # /app/pythonpath_docker will be appended to the PYTHONPATH in the final container
+  &superset-volumes
   - ./superset:/app/docker
   - superset_home:/app/superset_home
 
@@ -31,6 +32,8 @@ services:
     restart: unless-stopped
     volumes:
       - redis:/data
+    networks:
+      - all-network
 
   superset-db:
     env_file: superset/.env-non-dev
@@ -39,47 +42,57 @@ services:
     restart: unless-stopped
     volumes:
       - db_home:/var/lib/postgresql/data
+    networks:
+      - all-network
 
   superset:
     env_file: superset/.env-non-dev
     image: *superset-image
     container_name: superset_app
-    command: ["/app/docker/docker-bootstrap.sh", "app-gunicorn"]
+    command: [ "/app/docker/docker-bootstrap.sh", "app-gunicorn" ]
     user: "root"
     restart: unless-stopped
     ports:
       - 8088:8088
     depends_on: *superset-depends-on
     volumes: *superset-volumes
+    networks:
+      - all-network
 
   superset-init:
     image: *superset-image
     container_name: superset_init
-    command: ["/app/docker/docker-init.sh"]
+    command: [ "/app/docker/docker-init.sh" ]
     env_file: superset/.env-non-dev
     depends_on: *superset-depends-on
     user: "root"
     volumes: *superset-volumes
+    networks:
+      - all-network
 
   superset-worker:
     image: *superset-image
     container_name: superset_worker
-    command: ["/app/docker/docker-bootstrap.sh", "worker"]
+    command: [ "/app/docker/docker-bootstrap.sh", "worker" ]
     env_file: superset/.env-non-dev
     restart: unless-stopped
     depends_on: *superset-depends-on
     user: "root"
     volumes: *superset-volumes
+    networks:
+      - all-network
 
   superset-worker-beat:
     image: *superset-image
     container_name: superset_worker_beat
-    command: ["/app/docker/docker-bootstrap.sh", "beat"]
+    command: [ "/app/docker/docker-bootstrap.sh", "beat" ]
     env_file: superset/.env-non-dev
     restart: unless-stopped
     depends_on: *superset-depends-on
     user: "root"
     volumes: *superset-volumes
+    networks:
+      - all-network
 
 volumes:
   superset_home:
@@ -88,3 +101,6 @@ volumes:
     external: false
   redis:
     external: false
+networks:
+  all-network:
+    driver: bridge

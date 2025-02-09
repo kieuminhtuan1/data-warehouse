@@ -2,21 +2,39 @@ version: '3.7'
 
 services:
 
-  # postgreSQL service (share data between services)
-
-  postgres_dwh:
-    image: postgres:10-alpine
-    container_name: postgres_dwh
-    volumes:
-      - "dwh:/var/lib/postgresql/data"
-    ports:
-      - "5433:5432"
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
     environment:
-      POSTGRES_USER: ${DWH_POSTGRES_ADMIN}
-      POSTGRES_PASSWORD: ${DWH_POSTGRES_PASSWORD}
-      POSTGRES_DB: ${DWH_POSTGRES_DB}
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_USER=mysql
+      - MYSQL_PASSWORD=mysql
+      - MYSQL_DATABASE=dwh
+    ports:
+      - "3307:3306"
+    networks:
+      - all-network
+    volumes:
+      - mysql-db-volume:/var/lib/mysql
+      - ./dwh:/dwh
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    environment:
+      - PMA_HOST=mysql
+      - PMA_PORT=3306
+      - PMA_USER=mysql
+      - PMA_PASSWORD=mysql
+    ports:
+      - "8081:80"
+    networks:
+      - all-network
 
 volumes:
-  dwh:
-    name: ${DWH_DOCKER_MOUNT}
-    external: false
+  mysql-db-volume:
+
+
+networks:
+  all-network:
+    driver: bridge

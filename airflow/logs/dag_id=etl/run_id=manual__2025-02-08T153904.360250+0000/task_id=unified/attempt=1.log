@@ -1,0 +1,163 @@
+[2025-02-08T15:41:26.253+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-02-08T15:41:26.275+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl.unified manual__2025-02-08T15:39:04.360250+00:00 [queued]>
+[2025-02-08T15:41:26.286+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl.unified manual__2025-02-08T15:39:04.360250+00:00 [queued]>
+[2025-02-08T15:41:26.287+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2025-02-08T15:41:26.311+0000] {taskinstance.py:2889} INFO - Executing <Task(BashOperator): unified> on 2025-02-08 15:39:04.360250+00:00
+[2025-02-08T15:41:26.318+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=168) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-02-08T15:41:26.320+0000] {standard_task_runner.py:72} INFO - Started process 169 to run task
+[2025-02-08T15:41:26.321+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'etl', 'unified', 'manual__2025-02-08T15:39:04.360250+00:00', '--job-id', '8', '--raw', '--subdir', 'DAGS_FOLDER/etl.py', '--cfg-path', '/tmp/tmpa9z2tias']
+[2025-02-08T15:41:26.322+0000] {standard_task_runner.py:105} INFO - Job 8: Subtask unified
+[2025-02-08T15:41:26.376+0000] {task_command.py:467} INFO - Running <TaskInstance: etl.unified manual__2025-02-08T15:39:04.360250+00:00 [running]> on host b45b39a99641
+[2025-02-08T15:41:26.487+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='etl' AIRFLOW_CTX_DAG_ID='etl' AIRFLOW_CTX_TASK_ID='unified' AIRFLOW_CTX_EXECUTION_DATE='2025-02-08T15:39:04.360250+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-02-08T15:39:04.360250+00:00'
+[2025-02-08T15:41:26.489+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-02-08T15:41:26.512+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2025-02-08T15:41:26.514+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', 'docker exec spark-master /opt/spark/bin/spark-submit     --master spark://spark-master:7077     --conf spark.executor.memory=2g     --verbose     /opt/spark/ETL/unified/unified.py']
+[2025-02-08T15:41:26.531+0000] {subprocess.py:99} INFO - Output:
+[2025-02-08T15:41:28.471+0000] {subprocess.py:106} INFO - Using properties file: /opt/spark/conf/spark-defaults.conf
+[2025-02-08T15:41:28.617+0000] {subprocess.py:106} INFO - Adding default property: spark.eventLog.enabled=true
+[2025-02-08T15:41:28.618+0000] {subprocess.py:106} INFO - Adding default property: spark.history.fs.logDirectory=/opt/spark/spark-events
+[2025-02-08T15:41:28.619+0000] {subprocess.py:106} INFO - Adding default property: spark.master=spark://spark-master:7077
+[2025-02-08T15:41:28.619+0000] {subprocess.py:106} INFO - Adding default property: spark.eventLog.dir=/opt/spark/spark-events
+[2025-02-08T15:41:28.663+0000] {subprocess.py:106} INFO - Parsed arguments:
+[2025-02-08T15:41:28.664+0000] {subprocess.py:106} INFO -   master                  spark://spark-master:7077
+[2025-02-08T15:41:28.665+0000] {subprocess.py:106} INFO -   remote                  null
+[2025-02-08T15:41:28.666+0000] {subprocess.py:106} INFO -   deployMode              null
+[2025-02-08T15:41:28.666+0000] {subprocess.py:106} INFO -   executorMemory          2g
+[2025-02-08T15:41:28.667+0000] {subprocess.py:106} INFO -   executorCores           null
+[2025-02-08T15:41:28.668+0000] {subprocess.py:106} INFO -   totalExecutorCores      null
+[2025-02-08T15:41:28.668+0000] {subprocess.py:106} INFO -   propertiesFile          /opt/spark/conf/spark-defaults.conf
+[2025-02-08T15:41:28.669+0000] {subprocess.py:106} INFO -   driverMemory            null
+[2025-02-08T15:41:28.669+0000] {subprocess.py:106} INFO -   driverCores             null
+[2025-02-08T15:41:28.670+0000] {subprocess.py:106} INFO -   driverExtraClassPath    null
+[2025-02-08T15:41:28.670+0000] {subprocess.py:106} INFO -   driverExtraLibraryPath  null
+[2025-02-08T15:41:28.671+0000] {subprocess.py:106} INFO -   driverExtraJavaOptions  null
+[2025-02-08T15:41:28.671+0000] {subprocess.py:106} INFO -   supervise               false
+[2025-02-08T15:41:28.672+0000] {subprocess.py:106} INFO -   queue                   null
+[2025-02-08T15:41:28.672+0000] {subprocess.py:106} INFO -   numExecutors            null
+[2025-02-08T15:41:28.673+0000] {subprocess.py:106} INFO -   files                   null
+[2025-02-08T15:41:28.673+0000] {subprocess.py:106} INFO -   pyFiles                 null
+[2025-02-08T15:41:28.674+0000] {subprocess.py:106} INFO -   archives                null
+[2025-02-08T15:41:28.674+0000] {subprocess.py:106} INFO -   mainClass               null
+[2025-02-08T15:41:28.675+0000] {subprocess.py:106} INFO -   primaryResource         file:/opt/spark/ETL/unified/unified.py
+[2025-02-08T15:41:28.675+0000] {subprocess.py:106} INFO -   name                    unified.py
+[2025-02-08T15:41:28.676+0000] {subprocess.py:106} INFO -   childArgs               []
+[2025-02-08T15:41:28.677+0000] {subprocess.py:106} INFO -   jars                    null
+[2025-02-08T15:41:28.677+0000] {subprocess.py:106} INFO -   packages                null
+[2025-02-08T15:41:28.678+0000] {subprocess.py:106} INFO -   packagesExclusions      null
+[2025-02-08T15:41:28.678+0000] {subprocess.py:106} INFO -   repositories            null
+[2025-02-08T15:41:28.679+0000] {subprocess.py:106} INFO -   verbose                 true
+[2025-02-08T15:41:28.680+0000] {subprocess.py:106} INFO - 
+[2025-02-08T15:41:28.680+0000] {subprocess.py:106} INFO - Spark properties used, including those specified through
+[2025-02-08T15:41:28.681+0000] {subprocess.py:106} INFO -  --conf and those from the properties file /opt/spark/conf/spark-defaults.conf:
+[2025-02-08T15:41:28.681+0000] {subprocess.py:106} INFO -   (spark.eventLog.dir,/opt/spark/spark-events)
+[2025-02-08T15:41:28.682+0000] {subprocess.py:106} INFO -   (spark.eventLog.enabled,true)
+[2025-02-08T15:41:28.682+0000] {subprocess.py:106} INFO -   (spark.executor.memory,2g)
+[2025-02-08T15:41:28.683+0000] {subprocess.py:106} INFO -   (spark.history.fs.logDirectory,/opt/spark/spark-events)
+[2025-02-08T15:41:28.683+0000] {subprocess.py:106} INFO -   (spark.master,spark://spark-master:7077)
+[2025-02-08T15:41:28.684+0000] {subprocess.py:106} INFO - 
+[2025-02-08T15:41:28.684+0000] {subprocess.py:106} INFO - 
+[2025-02-08T15:41:29.133+0000] {subprocess.py:106} INFO - Main class:
+[2025-02-08T15:41:29.133+0000] {subprocess.py:106} INFO - org.apache.spark.deploy.PythonRunner
+[2025-02-08T15:41:29.136+0000] {subprocess.py:106} INFO - Arguments:
+[2025-02-08T15:41:29.137+0000] {subprocess.py:106} INFO - file:/opt/spark/ETL/unified/unified.py
+[2025-02-08T15:41:29.138+0000] {subprocess.py:106} INFO - null
+[2025-02-08T15:41:29.148+0000] {subprocess.py:106} INFO - Spark config:
+[2025-02-08T15:41:29.149+0000] {subprocess.py:106} INFO - (spark.app.name,unified.py)
+[2025-02-08T15:41:29.150+0000] {subprocess.py:106} INFO - (spark.app.submitTime,1739029289094)
+[2025-02-08T15:41:29.151+0000] {subprocess.py:106} INFO - (spark.eventLog.dir,/opt/spark/spark-events)
+[2025-02-08T15:41:29.152+0000] {subprocess.py:106} INFO - (spark.eventLog.enabled,true)
+[2025-02-08T15:41:29.153+0000] {subprocess.py:106} INFO - (spark.executor.memory,2g)
+[2025-02-08T15:41:29.154+0000] {subprocess.py:106} INFO - (spark.history.fs.logDirectory,/opt/spark/spark-events)
+[2025-02-08T15:41:29.155+0000] {subprocess.py:106} INFO - (spark.master,spark://spark-master:7077)
+[2025-02-08T15:41:29.155+0000] {subprocess.py:106} INFO - (spark.submit.deployMode,client)
+[2025-02-08T15:41:29.156+0000] {subprocess.py:106} INFO - (spark.submit.pyFiles,)
+[2025-02-08T15:41:29.156+0000] {subprocess.py:106} INFO - Classpath elements:
+[2025-02-08T15:41:29.157+0000] {subprocess.py:106} INFO - 
+[2025-02-08T15:41:29.157+0000] {subprocess.py:106} INFO - 
+[2025-02-08T15:41:29.158+0000] {subprocess.py:106} INFO - 
+[2025-02-08T15:41:30.196+0000] {subprocess.py:106} INFO - 25/02/08 15:41:30 INFO SparkContext: Running Spark version 3.5.4
+[2025-02-08T15:41:30.199+0000] {subprocess.py:106} INFO - 25/02/08 15:41:30 INFO SparkContext: OS info Linux, 5.15.167.4-microsoft-standard-WSL2, amd64
+[2025-02-08T15:41:30.201+0000] {subprocess.py:106} INFO - 25/02/08 15:41:30 INFO SparkContext: Java version 11.0.26
+[2025-02-08T15:41:30.395+0000] {subprocess.py:106} INFO - 25/02/08 15:41:30 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2025-02-08T15:41:30.696+0000] {subprocess.py:106} INFO - 25/02/08 15:41:30 INFO ResourceUtils: ==============================================================
+[2025-02-08T15:41:30.702+0000] {subprocess.py:106} INFO - 25/02/08 15:41:30 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2025-02-08T15:41:30.703+0000] {subprocess.py:106} INFO - 25/02/08 15:41:30 INFO ResourceUtils: ==============================================================
+[2025-02-08T15:41:30.705+0000] {subprocess.py:106} INFO - 25/02/08 15:41:30 INFO SparkContext: Submitted application: Unified Layer
+[2025-02-08T15:41:30.781+0000] {subprocess.py:106} INFO - 25/02/08 15:41:30 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(memory -> name: memory, amount: 2048, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2025-02-08T15:41:30.815+0000] {subprocess.py:106} INFO - 25/02/08 15:41:30 INFO ResourceProfile: Limiting resource is cpu
+[2025-02-08T15:41:30.819+0000] {subprocess.py:106} INFO - 25/02/08 15:41:30 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2025-02-08T15:41:30.949+0000] {subprocess.py:106} INFO - 25/02/08 15:41:30 INFO SecurityManager: Changing view acls to: root
+[2025-02-08T15:41:30.951+0000] {subprocess.py:106} INFO - 25/02/08 15:41:30 INFO SecurityManager: Changing modify acls to: root
+[2025-02-08T15:41:30.953+0000] {subprocess.py:106} INFO - 25/02/08 15:41:30 INFO SecurityManager: Changing view acls groups to:
+[2025-02-08T15:41:30.955+0000] {subprocess.py:106} INFO - 25/02/08 15:41:30 INFO SecurityManager: Changing modify acls groups to:
+[2025-02-08T15:41:30.956+0000] {subprocess.py:106} INFO - 25/02/08 15:41:30 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: root; groups with view permissions: EMPTY; users with modify permissions: root; groups with modify permissions: EMPTY
+[2025-02-08T15:41:31.292+0000] {subprocess.py:106} INFO - 25/02/08 15:41:31 INFO Utils: Successfully started service 'sparkDriver' on port 36011.
+[2025-02-08T15:41:31.333+0000] {subprocess.py:106} INFO - 25/02/08 15:41:31 INFO SparkEnv: Registering MapOutputTracker
+[2025-02-08T15:41:31.390+0000] {subprocess.py:106} INFO - 25/02/08 15:41:31 INFO SparkEnv: Registering BlockManagerMaster
+[2025-02-08T15:41:31.412+0000] {subprocess.py:106} INFO - 25/02/08 15:41:31 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2025-02-08T15:41:31.413+0000] {subprocess.py:106} INFO - 25/02/08 15:41:31 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2025-02-08T15:41:31.419+0000] {subprocess.py:106} INFO - 25/02/08 15:41:31 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2025-02-08T15:41:31.444+0000] {subprocess.py:106} INFO - 25/02/08 15:41:31 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-f7b4bfa3-25d6-4540-9fd1-69ca9011e720
+[2025-02-08T15:41:31.460+0000] {subprocess.py:106} INFO - 25/02/08 15:41:31 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+[2025-02-08T15:41:31.482+0000] {subprocess.py:106} INFO - 25/02/08 15:41:31 INFO SparkEnv: Registering OutputCommitCoordinator
+[2025-02-08T15:41:31.695+0000] {subprocess.py:106} INFO - 25/02/08 15:41:31 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+[2025-02-08T15:41:31.784+0000] {subprocess.py:106} INFO - 25/02/08 15:41:31 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2025-02-08T15:41:31.894+0000] {subprocess.py:106} INFO - 25/02/08 15:41:31 INFO SparkContext: Added JAR /opt/spark/jars/mysql-connector-java-8.0.26.jar at spark://13574e9a5001:36011/jars/mysql-connector-java-8.0.26.jar with timestamp 1739029290114
+[2025-02-08T15:41:32.135+0000] {subprocess.py:106} INFO - 25/02/08 15:41:32 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master:7077...
+[2025-02-08T15:41:32.205+0000] {subprocess.py:106} INFO - 25/02/08 15:41:32 INFO TransportClientFactory: Successfully created connection to spark-master/172.20.0.2:7077 after 40 ms (0 ms spent in bootstraps)
+[2025-02-08T15:41:32.347+0000] {subprocess.py:106} INFO - 25/02/08 15:41:32 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20250208154132-0008
+[2025-02-08T15:41:32.366+0000] {subprocess.py:106} INFO - 25/02/08 15:41:32 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20250208154132-0008/0 on worker-20250208140518-172.20.0.4-43785 (172.20.0.4:43785) with 2 core(s)
+[2025-02-08T15:41:32.370+0000] {subprocess.py:106} INFO - 25/02/08 15:41:32 INFO StandaloneSchedulerBackend: Granted executor ID app-20250208154132-0008/0 on hostPort 172.20.0.4:43785 with 2 core(s), 2.0 GiB RAM
+[2025-02-08T15:41:32.371+0000] {subprocess.py:106} INFO - 25/02/08 15:41:32 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 44881.
+[2025-02-08T15:41:32.372+0000] {subprocess.py:106} INFO - 25/02/08 15:41:32 INFO NettyBlockTransferService: Server created on 13574e9a5001:44881
+[2025-02-08T15:41:32.374+0000] {subprocess.py:106} INFO - 25/02/08 15:41:32 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2025-02-08T15:41:32.389+0000] {subprocess.py:106} INFO - 25/02/08 15:41:32 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 13574e9a5001, 44881, None)
+[2025-02-08T15:41:32.405+0000] {subprocess.py:106} INFO - 25/02/08 15:41:32 INFO BlockManagerMasterEndpoint: Registering block manager 13574e9a5001:44881 with 434.4 MiB RAM, BlockManagerId(driver, 13574e9a5001, 44881, None)
+[2025-02-08T15:41:32.434+0000] {subprocess.py:106} INFO - 25/02/08 15:41:32 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 13574e9a5001, 44881, None)
+[2025-02-08T15:41:32.441+0000] {subprocess.py:106} INFO - 25/02/08 15:41:32 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 13574e9a5001, 44881, None)
+[2025-02-08T15:41:32.444+0000] {subprocess.py:106} INFO - 25/02/08 15:41:32 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20250208154132-0008/0 is now RUNNING
+[2025-02-08T15:41:32.979+0000] {subprocess.py:106} INFO - 25/02/08 15:41:32 INFO SingleEventLogFileWriter: Logging events to file:/opt/spark/spark-events/app-20250208154132-0008.inprogress
+[2025-02-08T15:41:33.611+0000] {subprocess.py:106} INFO - 25/02/08 15:41:33 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+[2025-02-08T15:41:41.125+0000] {subprocess.py:106} INFO - root
+[2025-02-08T15:41:41.126+0000] {subprocess.py:106} INFO -  |-- job_id: string (nullable = true)
+[2025-02-08T15:41:41.127+0000] {subprocess.py:106} INFO -  |-- url_job: string (nullable = true)
+[2025-02-08T15:41:41.128+0000] {subprocess.py:106} INFO -  |-- job_title: string (nullable = true)
+[2025-02-08T15:41:41.128+0000] {subprocess.py:106} INFO -  |-- company_name: string (nullable = true)
+[2025-02-08T15:41:41.129+0000] {subprocess.py:106} INFO -  |-- company_overview: string (nullable = true)
+[2025-02-08T15:41:41.129+0000] {subprocess.py:106} INFO -  |-- company_scale: string (nullable = true)
+[2025-02-08T15:41:41.130+0000] {subprocess.py:106} INFO -  |-- company_address: string (nullable = true)
+[2025-02-08T15:41:41.130+0000] {subprocess.py:106} INFO -  |-- job_responsibilities: string (nullable = true)
+[2025-02-08T15:41:41.131+0000] {subprocess.py:106} INFO -  |-- requirements: string (nullable = true)
+[2025-02-08T15:41:41.131+0000] {subprocess.py:106} INFO -  |-- benefits: string (nullable = true)
+[2025-02-08T15:41:41.132+0000] {subprocess.py:106} INFO -  |-- job_city: string (nullable = true)
+[2025-02-08T15:41:41.132+0000] {subprocess.py:106} INFO -  |-- job_type: string (nullable = true)
+[2025-02-08T15:41:41.133+0000] {subprocess.py:106} INFO -  |-- gender: string (nullable = true)
+[2025-02-08T15:41:41.133+0000] {subprocess.py:106} INFO -  |-- number_candidate: string (nullable = true)
+[2025-02-08T15:41:41.133+0000] {subprocess.py:106} INFO -  |-- career_level: string (nullable = true)
+[2025-02-08T15:41:41.134+0000] {subprocess.py:106} INFO -  |-- year_of_experience: string (nullable = true)
+[2025-02-08T15:41:41.134+0000] {subprocess.py:106} INFO -  |-- salary: string (nullable = true)
+[2025-02-08T15:41:41.135+0000] {subprocess.py:106} INFO -  |-- due_date: string (nullable = true)
+[2025-02-08T15:41:41.135+0000] {subprocess.py:106} INFO -  |-- industry: string (nullable = true)
+[2025-02-08T15:41:41.135+0000] {subprocess.py:106} INFO -  |-- company_field: string (nullable = true)
+[2025-02-08T15:41:41.136+0000] {subprocess.py:106} INFO -  |-- working_location: string (nullable = true)
+[2025-02-08T15:41:41.136+0000] {subprocess.py:106} INFO -  |-- working_time: string (nullable = true)
+[2025-02-08T15:41:41.137+0000] {subprocess.py:106} INFO -  |-- application_method: string (nullable = true)
+[2025-02-08T15:41:41.137+0000] {subprocess.py:106} INFO - 
+[2025-02-08T15:41:41.138+0000] {subprocess.py:106} INFO - root
+[2025-02-08T15:41:41.138+0000] {subprocess.py:106} INFO -  |-- working_location: string (nullable = true)
+[2025-02-08T15:41:41.139+0000] {subprocess.py:106} INFO -  |-- job_city: string (nullable = true)
+[2025-02-08T15:41:41.139+0000] {subprocess.py:106} INFO -  |-- company_address: string (nullable = true)
+[2025-02-08T15:41:41.140+0000] {subprocess.py:106} INFO -  |-- working_location_id: string (nullable = true)
+[2025-02-08T15:41:41.140+0000] {subprocess.py:106} INFO - 
+[2025-02-08T15:41:41.141+0000] {subprocess.py:106} INFO - root
+[2025-02-08T15:41:41.141+0000] {subprocess.py:106} INFO -  |-- working_time: string (nullable = true)
+[2025-02-08T15:41:41.142+0000] {subprocess.py:106} INFO -  |-- working_time_id: string (nullable = true)
+[2025-02-08T15:41:41.142+0000] {subprocess.py:106} INFO - 
+[2025-02-08T15:41:41.459+0000] {subprocess.py:110} INFO - Command exited with return code 0
+[2025-02-08T15:41:41.499+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-02-08T15:41:41.499+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=etl, task_id=unified, run_id=manual__2025-02-08T15:39:04.360250+00:00, execution_date=20250208T153904, start_date=20250208T154126, end_date=20250208T154141
+[2025-02-08T15:41:41.540+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-02-08T15:41:41.558+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-02-08T15:41:41.570+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
