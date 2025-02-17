@@ -1,6 +1,8 @@
 from pyspark.sql import SparkSession
 import pyspark.sql.functions as F
 import uuid
+import os
+from dotenv import load_dotenv
 
 # Khởi tạo Spark session
 spark = SparkSession.builder \
@@ -13,12 +15,17 @@ spark.conf.set("spark.sql.legacy.timeParserPolicy", "LEGACY")
 df = spark.read.parquet(
     "/opt/spark/data/trusted/trusted.parquet")
 
-# Thông tin MySQL
-mysql_url = "jdbc:mysql://mysql:3306/dwh"
+dotenv_path = os.path.join(os.path.dirname(__file__), '..', '.env')
+
+load_dotenv(dotenv_path)
+
+mysql_url = os.getenv("MYSQL_URL")
+mysql_user = os.getenv("MYSQL_USER")
+mysql_password = os.getenv("MYSQL_PASSWORD")
 
 mysql_properties = {
-    "user": "mysql",
-    "password": "mysql",
+    "user": mysql_user,
+    "password": mysql_password,
     "driver": "com.mysql.cj.jdbc.Driver"
 }
 
